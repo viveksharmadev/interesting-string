@@ -26,4 +26,31 @@ class Solution {
        }
        return sb.toString();
    }
+   
+   // Another version
+   // tc -> n, sc-> n
+    public String toGoatLatin(String S) {
+        StringBuilder sb = new StringBuilder();
+        if(S==null || S.length()==0) return sb.toString();
+        
+        Character[] arr = {'a','e','i','o','u','A','E','I','O','U'};
+        Set<Character> vowels = new HashSet(Arrays.asList(arr));
+        String[] strArr = S.split(" ");
+        for(int i=0; i<strArr.length; i++){
+            char firstChar = strArr[i].charAt(0);            
+            if(vowels.contains(firstChar)){                
+                sb.append(strArr[i]);
+            }else{
+                sb.append(strArr[i].substring(1)).append(firstChar);
+            }
+            sb.append("ma");
+            int count = 0;
+            while(count++ < i+1){
+                sb.append("a");
+            }
+            if(i!=strArr.length-1)
+            sb.append(" ");
+        }
+        return sb.toString();
+    }
 }

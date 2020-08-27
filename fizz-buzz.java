@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/fizz-buzz/
-
+// tc -> n, sc-> 1
 class fizz-buzz {
     public List<String> fizzBuzz(int n) {
         List<String> res = new ArrayList<>();

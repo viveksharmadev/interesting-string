@@ -60,3 +60,35 @@ class Solution {
         return true;
     }
 }
+
+class Solution {
+    // tc -> n, sc-> 1
+    public boolean isPalindrome(String s) {
+        s = s.toLowerCase();
+        
+        int n = s.length();
+        
+        int start = 0, end = n-1;
+        
+        while(start < end){
+            
+            if(!Character.isLetterOrDigit(s.charAt(start))){
+                start++;
+            }
+            
+            else if(!Character.isLetterOrDigit(s.charAt(end))){
+                end--;
+            }
+            
+            else if(s.charAt(start)==s.charAt(end)){
+                start++; end--;
+            }
+            
+            else{
+                return false;
+            }
+        }
+        
+        return true;
+    }
+}
